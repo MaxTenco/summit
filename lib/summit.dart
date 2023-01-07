@@ -1,5 +1,7 @@
 library summit;
 
+export 'splash_screen_boot/splash_screen_boot.dart';
+
 /// A Calculator.
 class Calculator {
   /// Returns [value] plus 1.
