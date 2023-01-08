@@ -30,7 +30,7 @@ abstract class SummitPhone {
     }
   }
 
-  Future<void> openWebSite(String url) async {
+  static Future<void> openWebSite(String url) async {
     final Uri toLaunch = Uri(scheme: 'https', host: url);
     if (!await launchUrl(
       toLaunch,
@@ -40,7 +40,7 @@ abstract class SummitPhone {
     }
   }
 
-  Future<void> sendEmail(String email, String subject) async {
+  static Future<void> sendEmail(String email, String subject) async {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
       path: 'smith@example.com',
@@ -57,7 +57,7 @@ abstract class SummitPhone {
     }
   }
 
-  String? _encodeQueryParameters(Map<String, String> params) {
+  static String? _encodeQueryParameters(Map<String, String> params) {
     return params.entries.map((MapEntry<String, String> e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}').join('&');
   }
 }
