@@ -10,7 +10,7 @@ class SplashScreenBoot extends StatefulWidget {
   }) : super(key: key);
 
   final Widget splashScreen;
-  final Future<void> initializeApp;
+  final Future<void> Function() initializeApp;
   final VoidCallback onDone;
   final VoidCallback onError;
 
@@ -33,7 +33,7 @@ class _SplashScreenBootState extends State<SplashScreenBoot> {
   // **************************************************************************
   Future<void> _init() async {
     try {
-      await widget.initializeApp;
+      await widget.initializeApp();
       widget.onDone();
     } catch (e, s) {
       print(e);
