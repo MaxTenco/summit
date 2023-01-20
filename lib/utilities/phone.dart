@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:map_launcher/map_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 abstract class SummitPhone {
@@ -38,6 +39,31 @@ abstract class SummitPhone {
     )) {
       throw 'Could not launch $url';
     }
+  }
+
+  // /// 'https://www.google.com/maps/dir/?api=1&$origin&$destination';
+  // static Future<void> openMap(double latitude, double longitude) async {
+  //   final maps = Uri(
+  //     scheme: 'https',
+  //     path: 'www.google.com/maps/',
+  //     query: '@$latitude,$longitude',
+  //   );
+  //
+  //   if (!await launchUrl(
+  //     maps,
+  //     mode: LaunchMode.externalApplication,
+  //   )) {
+  //     throw 'Could not launch $maps';
+  //   }
+  // }
+
+  static Future<void> openMap(double latitude, double longitude, String title) async {
+    final availableMaps = await MapLauncher.installedMaps;
+
+    await availableMaps.first.showMarker(
+      coords: Coords(latitude, longitude),
+      title: title,
+    );
   }
 
   static Future<void> sendEmail(String email, String subject) async {

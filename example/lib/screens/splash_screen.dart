@@ -1,3 +1,4 @@
+import 'package:exaple/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:summit/splash_screen_boot/splash_screen_boot.dart';
 
@@ -24,7 +25,12 @@ class SplashScreen extends StatelessWidget {
     return SplashScreenBoot(
       splashScreen: _splashScreen(),
       initializeApp: _initializeApp,
-      onDone: () {},
+      onDone: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+      },
       onError: () {},
     );
   }
