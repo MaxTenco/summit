@@ -4,9 +4,11 @@ class CircleButton extends StatelessWidget {
   const CircleButton({
     Key? key,
     required this.icon,
+    required this.onPressed,
     this.iconColor,
   }) : super(key: key);
 
+  final VoidCallback? onPressed;
   final IconData icon;
   final Color? iconColor;
 
@@ -21,19 +23,21 @@ class CircleButton extends StatelessWidget {
           icon,
           color: iconColor,
         ),
-        onPressed: () {},
+        onPressed: onPressed,
       ),
     );
   }
 
   const factory CircleButton.back({
     Color iconColor,
+    VoidCallback? onPressed,
   }) = _BackButton;
 }
 
 class _BackButton extends CircleButton {
   const _BackButton({
     super.iconColor,
+    super.onPressed,
   }) : super(
           icon: Icons.arrow_back_ios_new_rounded,
         );
