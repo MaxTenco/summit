@@ -17,7 +17,7 @@ class CircleButton extends StatelessWidget {
     return Container(
       height: 40,
       width: 40,
-      decoration: BoxDecoration(color: Colors.grey.withAlpha(50), shape: BoxShape.circle),
+      decoration: BoxDecoration(color: Colors.grey.withAlpha(60), shape: BoxShape.circle),
       child: IconButton(
         icon: Icon(
           icon,
