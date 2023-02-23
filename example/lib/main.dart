@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Summit Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        useMaterial3: true,
       ),
       home: const SplashScreen(),
     );

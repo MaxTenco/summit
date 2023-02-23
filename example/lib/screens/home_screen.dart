@@ -25,6 +25,7 @@ class HomeScreen extends StatelessWidget {
                 child: const Text('Click me'),
               ),
             ),
+            const CircleButton.back(),
             const SizedBox(
               height: 300,
               width: double.infinity,
