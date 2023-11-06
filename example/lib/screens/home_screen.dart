@@ -1,3 +1,4 @@
+import 'package:exaple/screens/gap_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:summit/summit.dart';
 
@@ -11,6 +12,21 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Widget _gap() {
+    return Builder(
+      builder: (context) {
+        return ElevatedButton(
+          onPressed: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const GapScreen(),
+            ),
+          ),
+          child: const Text('Gap'),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,13 +34,8 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            _gap(),
             _openMaps(),
-            Center(
-              child: TextButton(
-                onPressed: () {},
-                child: const Text('Click me'),
-              ),
-            ),
             const CircleButton.back(),
             const SizedBox(
               height: 300,

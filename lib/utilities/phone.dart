@@ -31,8 +31,18 @@ abstract class SummitPhone {
     }
   }
 
-  static Future<void> openWebSite(String url) async {
-    final Uri toLaunch = Uri(scheme: 'https', host: url);
+  Future<void> _openWebSite(String url) async {
+    final parts = url.split('://');
+    final scheme = parts[0];
+
+    final splitted = parts[1].split('/');
+    final host = splitted[0];
+
+    splitted.removeAt(0);
+    final path = splitted.join('/');
+
+    final toLaunch = Uri(scheme: scheme, host: host, path: path);
+
     if (!await launchUrl(
       toLaunch,
       mode: LaunchMode.externalApplication,
