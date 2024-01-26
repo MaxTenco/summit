@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:map_launcher/map_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart' as lString;
+import 'package:url_launcher/url_launcher_string.dart' as url_launcher_s;
 
 abstract class SummitPhone {
   static Future<void> makePhoneCall(String phoneNumber) async {
@@ -32,8 +32,8 @@ abstract class SummitPhone {
     }
   }
 
-  Future<void> openWebSite(String url) async {
-    if (!await lString.launchUrlString(
+  static Future<void> openWebSite(String url) async {
+    if (!await url_launcher_s.launchUrlString(
       url,
       mode: LaunchMode.externalApplication,
     )) {
