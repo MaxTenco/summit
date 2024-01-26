@@ -21,10 +21,8 @@ class GapScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            _separator('xxSmall'),
-            GapH.xxSmall,
-            _separator('xSmall'),
-            GapH.xSmall,
+            _separator('tiny'),
+            GapH.tiny,
             _separator('small'),
             GapH.small,
             _separator('mediumSmall'),
@@ -35,10 +33,8 @@ class GapScreen extends StatelessWidget {
             GapH.mediumLarge,
             _separator('large'),
             GapH.large,
-            _separator('xLarge'),
-            GapH.xLarge,
-            _separator('xxLarge'),
-            GapH.xxLarge,
+            _separator('extraLarge'),
+            GapH.extraLarge,
             _separator(''),
           ],
         ),
