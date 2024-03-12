@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class SplashScreenBoot extends StatefulWidget {
   const SplashScreenBoot({
-    Key? key,
+    super.key,
     required this.splashScreen,
     required this.initializeApp,
     required this.onDone,
     required this.onError,
-  }) : super(key: key);
+  });
 
   final Widget splashScreen;
   final Future<void> Function() initializeApp;
