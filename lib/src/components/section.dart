@@ -2,10 +2,40 @@ import 'package:flutter/material.dart';
 
 class Section extends StatelessWidget {
   const Section({
+    super.key,
     required this.title,
     required this.child,
-    Key? key,
-  }) : super(key: key);
+    this.titlePadding,
+  });
+
+  final String title;
+  final Widget child;
+  final EdgeInsets? titlePadding;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Padding(
+          padding: titlePadding ?? const EdgeInsets.only(bottom: 8, right: 16, left: 16),
+          child: Text(
+            title,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+        ),
+        child,
+      ],
+    );
+  }
+}
+
+class SectionOld extends StatelessWidget {
+  const SectionOld({
+    required this.title,
+    required this.child,
+    super.key,
+  });
 
   final String title;
   final Widget child;

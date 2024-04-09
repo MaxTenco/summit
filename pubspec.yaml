@@ -15,8 +15,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.1
+  flutter_lints: ^3.0.2
   url_launcher: ^6.2.5
-  map_launcher: ^3.1.0
+  map_launcher: ^3.2.0
 
 flutter:

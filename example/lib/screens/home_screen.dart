@@ -36,7 +36,6 @@ class HomeScreen extends StatelessWidget {
           children: [
             _gap(),
             _openMaps(),
-            const CircleButton.back(),
             const SizedBox(
               height: 300,
               width: double.infinity,
