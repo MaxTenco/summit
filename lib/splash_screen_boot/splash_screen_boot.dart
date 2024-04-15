@@ -35,9 +35,7 @@ class _SplashScreenBootState extends State<SplashScreenBoot> {
     try {
       await widget.initializeApp();
       widget.onDone();
-    } catch (e, s) {
-      print(e);
-      print(s);
+    } catch (e) {
       widget.onError();
     }
   }

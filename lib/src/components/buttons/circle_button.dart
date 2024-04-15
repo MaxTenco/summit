@@ -6,17 +6,21 @@ class CircleButton extends StatelessWidget {
     required this.icon,
     required this.onPressed,
     this.iconColor,
+    this.size = 40,
+    this.iconSize,
   });
 
   final VoidCallback? onPressed;
   final IconData icon;
   final Color? iconColor;
+  final double size;
+  final double? iconSize;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
-      width: 40,
+      height: size,
+      width: size,
       decoration: BoxDecoration(
         color: Colors.grey.withAlpha(70),
         shape: BoxShape.circle,
@@ -27,6 +31,7 @@ class CircleButton extends StatelessWidget {
           color: iconColor,
         ),
         onPressed: onPressed,
+        iconSize: iconSize,
       ),
     );
   }

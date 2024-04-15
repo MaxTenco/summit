@@ -13,13 +13,12 @@ abstract class SummitPhone {
     await launchUrl(launchUri);
   }
 
-  static Future<void> makeWhatsAppChat(String phoneNumber, String message) async {
+  static Future<void> makeWhatsAppChat(String phoneNumber, [String? message]) async {
     late final String url;
-
     if (Platform.isAndroid) {
-      url = 'https://wa.me/$phoneNumber/?text=${Uri.parse(message)}';
+      url = 'https://wa.me/$phoneNumber/?text=${Uri.parse(message ?? '')}';
     } else {
-      url = 'https://api.whatsapp.com/send?phone=$phoneNumber=${Uri.parse(message)}';
+      url = 'https://api.whatsapp.com/send?phone=$phoneNumber=${Uri.parse(message ?? '')}';
     }
 
     final Uri uri = Uri.parse(url);
