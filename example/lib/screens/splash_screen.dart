@@ -31,7 +31,7 @@ class SplashScreen extends StatelessWidget {
           MaterialPageRoute(builder: (context) => const HomeScreen()),
         );
       },
-      onError: () {},
+      onError: (_, __) {},
     );
   }
 }

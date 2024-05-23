@@ -12,7 +12,7 @@ class SplashScreenBoot extends StatefulWidget {
   final Widget splashScreen;
   final Future<void> Function() initializeApp;
   final VoidCallback onDone;
-  final VoidCallback onError;
+  final Function(Object exception, StackTrace stackTrace) onError;
 
   @override
   State<SplashScreenBoot> createState() => _SplashScreenBootState();
@@ -35,8 +35,8 @@ class _SplashScreenBootState extends State<SplashScreenBoot> {
     try {
       await widget.initializeApp();
       widget.onDone();
-    } catch (e) {
-      widget.onError();
+    } catch (e, s) {
+      widget.onError(e, s);
     }
   }
 
