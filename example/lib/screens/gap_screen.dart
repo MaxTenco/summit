@@ -22,15 +22,15 @@ class GapScreen extends StatelessWidget {
         child: Column(
           children: [
             _separator('tiny'),
-            GapH.tiny,
+            // GapH.tiny,
             _separator('small'),
             GapH.small,
             _separator('mediumSmall'),
-            GapH.mediumSmall,
+            // GapH.mediumSmall,
             _separator('medium'),
             GapH.medium,
             _separator('mediumLarge'),
-            GapH.mediumLarge,
+            // GapH.mediumLarge,
             _separator('large'),
             GapH.large,
             _separator('extraLarge'),
