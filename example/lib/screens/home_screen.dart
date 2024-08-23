@@ -1,6 +1,7 @@
-import 'package:exaple/screens/gap_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:summit/summit.dart';
+
+import 'gap_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
